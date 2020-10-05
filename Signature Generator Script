@@ -1,0 +1,421 @@
+@echo off
+Title DOM'S Kitchen ^& Market - Email Signature Generator
+SET Primary="%appdata%\Microsoft\Signatures\Primary.htm"
+SET PrimaryCell="%appdata%\Microsoft\Signatures\Primary with Cell.htm"
+SET Direct="%appdata%\Microsoft\Signatures\Direct.htm"
+SET DirectCell="%appdata%\Microsoft\Signatures\Direct with Cell.htm"
+
+IF EXIST %Primary% DEL /F %Primary%
+IF EXIST %PrimaryCell% DEL /F %PrimaryCell%
+IF EXIST %Direct% DEL /F %Direct%
+IF EXIST %DirectCell% DEL /F %DirectCell%
+
+echo.
+echo.
+echo This script will create standardized email signatures in your Outlook. Re-run this script to make any changes or updates as needed.
+echo.
+echo.
+
+SET /P DisplayName=Enter your name as you would like it to appear:  
+SET /P Title=Enter your title as you would like it to appear:  
+SET /P Email=Enter your email address:  
+SET /P Extension=Enter your office extension in format ###. If you do not have one, press enter: 
+SET /P DirectNumber=Enter your direct office phone number in format ###-###-####. If you do not have one, press enter:  
+SET /P CellNumber=Enter your cell phone number in format ###-###-####:  
+
+:PrimarySignature
+@echo off
+echo	^<!-- HTML expanding (Emmet): > %Primary%
+echo	^  - type html:5 and press Tab; >> %Primary%
+echo	^  - type div^>h1#header and press Tab; >> %Primary%
+echo	^^--^> >> %Primary%
+echo 	^<head^> >> %Primary%
+echo	^<meta name="color-scheme" content="light dark"^> >> %Primary%
+echo	^<meta name="supported-color-schemes" content="light dark"^> >> %Primary%
+echo	^<style^> >> %Primary%
+echo	^@media (prefers-color-scheme: dark ) { >> %Primary%
+echo	^	/* Shows Dark Mode-Only Content, Like Images */ >> %Primary%
+echo	^	.dark-img { display:block ^!important; width: auto ^!important; overflow: visible ^!important; float: none ^!important; max-height:inherit ^!important; max-width:inherit ^!important; line-height: auto ^!important; margin-top:0px ^!important; visibility:inherit ^!important; } >> %Primary%
+echo	^	/* Hides Light Mode-Only Content, Like Images */ >> %Primary%
+echo	^	.light-img { display:none; display:none ^!important; } >> %Primary%
+echo	^	/* Custom Dark Mode Font Colors */ >> %Primary%
+echo	^	h1, h2, p, span, a, b { color: #ffffff ^!important; } >> %Primary%
+echo	^	/* Shows Dark Mode-Only Content, Like Images */ >> %Primary%
+echo	^	[data-ogsc] .dark-img { display:block ^!important; width: auto ^!important; overflow: visible ^!important; float: none ^!important; max-height:inherit ^!important; max-width:inherit ^!important; line-height: auto ^!important; margin-top:0px ^!important; visibility:inherit ^!important; } >> %Primary%
+echo	^	/* Hides Light Mode-Only Content, Like Images */ >> %Primary%
+echo	^	[data-ogsc] .light-img { display:none; display:none ^!important; } >> %Primary%
+echo	^	/* Custom Dark Mode Font Colors */ >> %Primary%
+echo	^	[data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff ^!important; } >> %Primary%
+echo	^</style^> >> %Primary%
+echo	^</head^> >> %Primary%
+echo	^<style^> >> %Primary%
+echo	^  .ExternalClass * {line-height: 100%%} >> %Primary%
+echo	^</style^> >> %Primary%
+echo	^<span style="font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %Primary%
+echo	^  ^<br /^>^<br /^> >> %Primary%
+echo	^</span^> >> %Primary%
+echo	^<table >> %Primary%
+echo	^  cellspacing="0" >> %Primary%
+echo	^  cellpadding="0" >> %Primary%
+echo	^  border="0" >> %Primary%
+echo	^  valign="middle" >> %Primary%
+echo	^  style="-webkit-text-size-adjust:100%%;-ms-text-size-adjust:100%%;"^> >> %Primary%
+echo	^  ^<tr^> >> %Primary%
+echo	^    ^<td >> %Primary%
+echo	^      style="padding:0px 2px 0px 0px"^> >> %Primary%
+echo	^      ^<a href="https://www.domschicago.com"^> >> %Primary%
+echo	^        ^<img >> %Primary%
+echo	^		   class="light-img" >> %Primary%
+echo	^          src="https://static.wixstatic.com/media/a0585a_6d3065fb88ff4c458b8038a84921aa2b~mv2.png" >> %Primary%
+echo	^          title="DOMSChicago.com" >> %Primary%
+echo	^          alt="DOMSChicago.com" >> %Primary%
+echo	^        /^> >> %Primary%
+echo	^		^<!--[if !mso]^>^<! --^>^<div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center"^> >> %Primary%
+echo	^		^<img  >> %Primary%
+echo	^		   src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %Primary%
+echo	^          title="DOMSChicago.com" >> %Primary%
+echo	^          alt="DOMSChicago.com" >> %Primary%
+echo	^        /^> >> %Primary%
+echo	^	    ^</div^>^<^!--^<^![endif]--^> >> %Primary%
+echo	^      ^</a^> >> %Primary%
+echo	^    ^</td^> >> %Primary%
+echo	^    ^<td style="border-left:2px #1D252D solid; padding:0px 10px 0px 16px; font-weight:normal; font-size:11px; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %Primary%
+echo	^      ^<span style="color:#1D252D; font-weight:bold; font-size:16px" >> %Primary%
+echo	^        ^>%DisplayName%^</span >> %Primary%
+echo	^      ^>^<br /^> >> %Primary%
+echo	^      ^<span  >> %Primary%
+echo	^        valign="bottom" >> %Primary%
+echo	^        style="color:#1D252D;" >> %Primary%
+echo	^        ^>%Title%^</span >> %Primary%
+echo	^      ^>^<br /^> >> %Primary%
+IF "%Extension%"=="" GOTO NoExtension
+:Extension
+echo	^      ^<span  >> %Primary%
+echo	^        valign="bottom" >> %Primary%
+echo	^        style="color:#1D252D; font-weight:bold;" >> %Primary%
+echo	^        ^>Office: ^</span >> %Primary%
+echo	^      ^>^<a  >> %Primary%
+echo	^        valign="bottom" >> %Primary%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %Primary%
+echo	^        href="tel:312-549-8795,,%Extension%" >> %Primary%
+echo	^        ^>312-549-8795 Ext.%Extension%^</a >> %Primary%
+echo	^      ^>^<br /^> >> %Primary%
+GOTO Email
+:NoExtension
+echo	^      ^<span  >> %Primary%
+echo	^        valign="bottom" >> %Primary%
+echo	^        style="color:#1D252D; font-weight:bold;" >> %Primary%
+echo	^        ^>Main: ^</span >> %Primary%
+echo	^      ^>^<a  >> %Primary%
+echo	^        valign="bottom" >> %Primary%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %Primary%
+echo	^        href="tel:312-549-8795" >> %Primary%
+echo	^        ^>312-549-8795^</a >> %Primary%
+echo	^      ^>^<br /^> >> %Primary%
+GOTO Email
+:Email
+echo	^      ^<a >> %Primary%
+echo	^        valign="bottom" >> %Primary%
+echo	^        style="color:#1D252D; text-decoration:none;" >> %Primary%
+echo	^        href="mailto:%Email%" >> %Primary%
+echo	^        ^>%Email%^</a ^> >> %Primary%
+echo	^    ^</td^> >> %Primary%
+echo	^  ^</tr^> >> %Primary%
+echo	^</table^> >> %Primary%
+
+:PrimaryCell_Signature
+@echo off
+echo	^<!-- HTML expanding (Emmet): > %PrimaryCell%
+echo	^  - type html:5 and press Tab; >> %PrimaryCell%
+echo	^  - type div^>h1#header and press Tab; >> %PrimaryCell%
+echo	^^--^> >> %PrimaryCell%
+echo 	^<head^> >> %PrimaryCell%
+echo	^<meta name="color-scheme" content="light dark"^> >> %PrimaryCell%
+echo	^<meta name="supported-color-schemes" content="light dark"^> >> %PrimaryCell%
+echo	^<style^> >> %PrimaryCell%
+echo	^@media (prefers-color-scheme: dark ) { >> %PrimaryCell%
+echo	^	/* Shows Dark Mode-Only Content, Like Images */ >> %PrimaryCell%
+echo	^	.dark-img { display:block ^!important; width: auto ^!important; overflow: visible ^!important; float: none ^!important; max-height:inherit ^!important; max-width:inherit ^!important; line-height: auto ^!important; margin-top:0px ^!important; visibility:inherit ^!important; } >> %PrimaryCell%
+echo	^	/* Hides Light Mode-Only Content, Like Images */ >> %PrimaryCell%
+echo	^	.light-img { display:none; display:none ^!important; } >> %PrimaryCell%
+echo	^	/* Custom Dark Mode Font Colors */ >> %PrimaryCell%
+echo	^	h1, h2, p, span, a, b { color: #ffffff ^!important; } >> %PrimaryCell%
+echo	^	/* Shows Dark Mode-Only Content, Like Images */ >> %PrimaryCell%
+echo	^	[data-ogsc] .dark-img { display:block ^!important; width: auto ^!important; overflow: visible ^!important; float: none ^!important; max-height:inherit ^!important; max-width:inherit ^!important; line-height: auto ^!important; margin-top:0px ^!important; visibility:inherit ^!important; } >> %PrimaryCell%
+echo	^	/* Hides Light Mode-Only Content, Like Images */ >> %PrimaryCell%
+echo	^	[data-ogsc] .light-img { display:none; display:none ^!important; } >> %PrimaryCell%
+echo	^	/* Custom Dark Mode Font Colors */ >> %PrimaryCell%
+echo	^	[data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff ^!important; } >> %PrimaryCell%
+echo	^</style^> >> %PrimaryCell%
+echo	^</head^> >> %PrimaryCell%
+echo	^<style^> >> %PrimaryCell%
+echo	^  .ExternalClass * {line-height: 100%%} >> %PrimaryCell%
+echo	^</style^> >> %PrimaryCell%
+echo	^<span style="font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %PrimaryCell%
+echo	^  ^<br /^>^<br /^> >> %PrimaryCell%
+echo	^</span^> >> %PrimaryCell%
+echo	^<table >> %PrimaryCell%
+echo	^  cellspacing="0" >> %PrimaryCell%
+echo	^  cellpadding="0" >> %PrimaryCell%
+echo	^  border="0" >> %PrimaryCell%
+echo	^  valign="middle" >> %PrimaryCell%
+echo	^  style="-webkit-text-size-adjust:100%%;-ms-text-size-adjust:100%%;"^> >> %PrimaryCell%
+echo	^  ^<tr^> >> %PrimaryCell%
+echo	^    ^<td >> %PrimaryCell%
+echo	^      style="padding:0px 2px 0px 0px"^> >> %PrimaryCell%
+echo	^      ^<a href="https://www.domschicago.com"^> >> %PrimaryCell%
+echo	^        ^<img >> %PrimaryCell%
+echo	^		   class="light-img" >> %PrimaryCell%
+echo	^          src="https://static.wixstatic.com/media/a0585a_6d3065fb88ff4c458b8038a84921aa2b~mv2.png" >> %PrimaryCell%
+echo	^          title="DOMSChicago.com" >> %PrimaryCell%
+echo	^          alt="DOMSChicago.com" >> %PrimaryCell%
+echo	^        /^> >> %PrimaryCell%
+echo	^		^<!--[if !mso]^>^<! --^>^<div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center"^> >> %PrimaryCell%
+echo	^		^<img  >> %PrimaryCell%
+echo	^		   src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %PrimaryCell%
+echo	^          title="DOMSChicago.com" >> %PrimaryCell%
+echo	^          alt="DOMSChicago.com" >> %PrimaryCell%
+echo	^        /^> >> %PrimaryCell%
+echo	^	    ^</div^>^<^!--^<^![endif]--^> >> %PrimaryCell%
+echo	^      ^</a^> >> %PrimaryCell%
+echo	^    ^</td^> >> %PrimaryCell%
+echo	^    ^<td style="border-left:2px #1D252D solid; padding:0px 10px 0px 16px; font-weight:normal; font-size:11px; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %PrimaryCell%
+echo	^      ^<span style="color:#1D252D; font-weight:bold; font-size:16px" >> %PrimaryCell%
+echo	^        ^>%DisplayName%^</span >> %PrimaryCell%
+echo	^      ^>^<br /^> >> %PrimaryCell%
+echo	^      ^<span  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
+echo	^        style="color:#1D252D;" >> %PrimaryCell%
+echo	^        ^>%Title%^</span >> %PrimaryCell%
+echo	^      ^>^<br /^> >> %PrimaryCell%
+IF "%Extension%"=="" GOTO NoExtensionCell
+:ExtensionCell
+echo	^      ^<span  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
+echo	^        style="color:#1D252D; font-weight:bold;" >> %PrimaryCell%
+echo	^        ^>Office: ^</span >> %PrimaryCell%
+echo	^      ^>^<a  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %PrimaryCell%
+echo	^        href="tel:312-549-8795,,%Extension%" >> %PrimaryCell%
+echo	^        ^>312-549-8795 Ext.%Extension%^</a >> %PrimaryCell%
+echo	^      ^>^<br /^> >> %PrimaryCell%
+GOTO Cell
+:NoExtensionCell
+echo	^      ^<span  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
+echo	^        style="color:#1D252D; font-weight:bold;" >> %PrimaryCell%
+echo	^        ^>Main: ^</span >> %PrimaryCell%
+echo	^      ^>^<a  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %PrimaryCell%
+echo	^        href="tel:312-549-8795" >> %PrimaryCell%
+echo	^        ^>312-549-8795^</a >> %PrimaryCell%
+echo	^      ^>^<br /^> >> %PrimaryCell%
+GOTO Cell
+:Cell
+echo	^      ^<span  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
+echo	^        style="color:#1D252D; font-weight:bold;" >> %PrimaryCell%
+echo	^        ^>Cell: ^</span >> %PrimaryCell%
+echo	^      ^>^<a  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %PrimaryCell%
+echo	^        href="tel:%CellNumber%" >> %PrimaryCell%
+echo	^        ^>%CellNumber%^</a >> %PrimaryCell%
+echo	^      ^>^<br /^> >> %PrimaryCell%
+echo	^      ^<a >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
+echo	^        style="color:#1D252D; text-decoration:none;" >> %PrimaryCell%
+echo	^        href="mailto:%Email%" >> %PrimaryCell%
+echo	^        ^>%Email%^</a ^> >> %PrimaryCell%
+echo	^    ^</td^> >> %PrimaryCell%
+echo	^  ^</tr^> >> %PrimaryCell%
+echo	^</table^> >> %PrimaryCell%
+
+IF "%DirectNumber%"=="" GOTO End
+:Direct_Signature
+@echo off
+echo	^<!-- HTML expanding (Emmet): > %Direct%
+echo	^  - type html:5 and press Tab; >> %Direct%
+echo	^  - type div^>h1#header and press Tab; >> %Direct%
+echo	^^--^> >> %Direct%
+echo 	^<head^> >> %Direct%
+echo	^<meta name="color-scheme" content="light dark"^> >> %Direct%
+echo	^<meta name="supported-color-schemes" content="light dark"^> >> %Direct%
+echo	^<style^> >> %Direct%
+echo	^@media (prefers-color-scheme: dark ) { >> %Direct%
+echo	^	/* Shows Dark Mode-Only Content, Like Images */ >> %Direct%
+echo	^	.dark-img { display:block ^!important; width: auto ^!important; overflow: visible ^!important; float: none ^!important; max-height:inherit ^!important; max-width:inherit ^!important; line-height: auto ^!important; margin-top:0px ^!important; visibility:inherit ^!important; } >> %Direct%
+echo	^	/* Hides Light Mode-Only Content, Like Images */ >> %Direct%
+echo	^	.light-img { display:none; display:none ^!important; } >> %Direct%
+echo	^	/* Custom Dark Mode Font Colors */ >> %Direct%
+echo	^	h1, h2, p, span, a, b { color: #ffffff ^!important; } >> %Direct%
+echo	^	/* Shows Dark Mode-Only Content, Like Images */ >> %Direct%
+echo	^	[data-ogsc] .dark-img { display:block ^!important; width: auto ^!important; overflow: visible ^!important; float: none ^!important; max-height:inherit ^!important; max-width:inherit ^!important; line-height: auto ^!important; margin-top:0px ^!important; visibility:inherit ^!important; } >> %Direct%
+echo	^	/* Hides Light Mode-Only Content, Like Images */ >> %Direct%
+echo	^	[data-ogsc] .light-img { display:none; display:none ^!important; } >> %Direct%
+echo	^	/* Custom Dark Mode Font Colors */ >> %Direct%
+echo	^	[data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff ^!important; } >> %Direct%
+echo	^</style^> >> %Direct%
+echo	^</head^> >> %Direct%
+echo	^<style^> >> %Direct%
+echo	^  .ExternalClass * {line-height: 100%%} >> %Direct%
+echo	^</style^> >> %Direct%
+echo	^<span style="font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %Direct%
+echo	^  ^<br /^>^<br /^> >> %Direct%
+echo	^</span^> >> %Direct%
+echo	^<table >> %Direct%
+echo	^  cellspacing="0" >> %Direct%
+echo	^  cellpadding="0" >> %Direct%
+echo	^  border="0" >> %Direct%
+echo	^  valign="middle" >> %Direct%
+echo	^  style="-webkit-text-size-adjust:100%%;-ms-text-size-adjust:100%%;"^> >> %Direct%
+echo	^  ^<tr^> >> %Direct%
+echo	^    ^<td >> %Direct%
+echo	^      style="padding:0px 2px 0px 0px"^> >> %Direct%
+echo	^      ^<a href="https://www.domschicago.com"^> >> %Direct%
+echo	^        ^<img >> %Direct%
+echo	^		   class="light-img" >> %Direct%
+echo	^          src="https://static.wixstatic.com/media/a0585a_6d3065fb88ff4c458b8038a84921aa2b~mv2.png" >> %Direct%
+echo	^          title="DOMSChicago.com" >> %Direct%
+echo	^          alt="DOMSChicago.com" >> %Direct%
+echo	^        /^> >> %Direct%
+echo	^		^<!--[if !mso]^>^<! --^>^<div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center"^> >> %Direct%
+echo	^		^<img  >> %Direct%
+echo	^		   src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %Direct%
+echo	^          title="DOMSChicago.com" >> %Direct%
+echo	^          alt="DOMSChicago.com" >> %Direct%
+echo	^        /^> >> %Direct%
+echo	^	    ^</div^>^<^!--^<^![endif]--^> >> %Direct%
+echo	^      ^</a^> >> %Direct%
+echo	^    ^</td^> >> %Direct%
+echo	^    ^<td style="border-left:2px #1D252D solid; padding:0px 10px 0px 16px; font-weight:normal; font-size:11px; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %Direct%
+echo	^      ^<span style="color:#1D252D; font-weight:bold; font-size:16px" >> %Direct%
+echo	^        ^>%DisplayName%^</span >> %Direct%
+echo	^      ^>^<br /^> >> %Direct%
+echo	^      ^<span  >> %Direct%
+echo	^        valign="bottom" >> %Direct%
+echo	^        style="color:#1D252D;" >> %Direct%
+echo	^        ^>%Title%^</span >> %Direct%
+echo	^      ^>^<br /^> >> %Direct%
+echo	^      ^<span  >> %Direct%
+echo	^        valign="bottom" >> %Direct%
+echo	^        style="color:#1D252D; font-weight:bold;" >> %Direct%
+echo	^        ^>Direct: ^</span >> %Direct%
+echo	^      ^>^<a  >> %Direct%
+echo	^        valign="bottom" >> %Direct%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %Direct%
+echo	^        href="tel:%DirectNumber%" >> %Direct%
+echo	^        ^>%DirectNumber%^</a >> %Direct%
+echo	^      ^>^<br /^> >> %Direct%
+echo	^      ^<a >> %Direct%
+echo	^        valign="bottom" >> %Direct%
+echo	^        style="color:#1D252D; text-decoration:none;" >> %Direct%
+echo	^        href="mailto:%Email%" >> %Direct%
+echo	^        ^>%Email%^</a ^> >> %Direct%
+echo	^    ^</td^> >> %Direct%
+echo	^  ^</tr^> >> %Direct%
+echo	^</table^> >> %Direct%
+
+:DirectCell_Signature
+@echo off
+echo	^<!-- HTML expanding (Emmet): > %DirectCell%
+echo	^  - type html:5 and press Tab; >> %DirectCell%
+echo	^  - type div^>h1#header and press Tab; >> %DirectCell%
+echo	^^--^> >> %DirectCell%
+echo 	^<head^> >> %DirectCell%
+echo	^<meta name="color-scheme" content="light dark"^> >> %DirectCell%
+echo	^<meta name="supported-color-schemes" content="light dark"^> >> %DirectCell%
+echo	^<style^> >> %DirectCell%
+echo	^@media (prefers-color-scheme: dark ) { >> %DirectCell%
+echo	^	/* Shows Dark Mode-Only Content, Like Images */ >> %DirectCell%
+echo	^	.dark-img { display:block ^!important; width: auto ^!important; overflow: visible ^!important; float: none ^!important; max-height:inherit ^!important; max-width:inherit ^!important; line-height: auto ^!important; margin-top:0px ^!important; visibility:inherit ^!important; } >> %DirectCell%
+echo	^	/* Hides Light Mode-Only Content, Like Images */ >> %DirectCell%
+echo	^	.light-img { display:none; display:none ^!important; } >> %DirectCell%
+echo	^	/* Custom Dark Mode Font Colors */ >> %DirectCell%
+echo	^	h1, h2, p, span, a, b { color: #ffffff ^!important; } >> %DirectCell%
+echo	^	/* Shows Dark Mode-Only Content, Like Images */ >> %DirectCell%
+echo	^	[data-ogsc] .dark-img { display:block ^!important; width: auto ^!important; overflow: visible ^!important; float: none ^!important; max-height:inherit ^!important; max-width:inherit ^!important; line-height: auto ^!important; margin-top:0px ^!important; visibility:inherit ^!important; } >> %DirectCell%
+echo	^	/* Hides Light Mode-Only Content, Like Images */ >> %DirectCell%
+echo	^	[data-ogsc] .light-img { display:none; display:none ^!important; } >> %DirectCell%
+echo	^	/* Custom Dark Mode Font Colors */ >> %DirectCell%
+echo	^	[data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b { color: #ffffff ^!important; } >> %DirectCell%
+echo	^</style^> >> %DirectCell%
+echo	^</head^> >> %DirectCell%
+echo	^<style^> >> %DirectCell%
+echo	^  .ExternalClass * {line-height: 100%%} >> %DirectCell%
+echo	^</style^> >> %DirectCell%
+echo	^<span style="font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %DirectCell%
+echo	^  ^<br /^>^<br /^> >> %DirectCell%
+echo	^</span^> >> %DirectCell%
+echo	^<table >> %DirectCell%
+echo	^  cellspacing="0" >> %DirectCell%
+echo	^  cellpadding="0" >> %DirectCell%
+echo	^  border="0" >> %DirectCell%
+echo	^  valign="middle" >> %DirectCell%
+echo	^  style="-webkit-text-size-adjust:100%%;-ms-text-size-adjust:100%%;"^> >> %DirectCell%
+echo	^  ^<tr^> >> %DirectCell%
+echo	^    ^<td >> %DirectCell%
+echo	^      style="padding:0px 2px 0px 0px"^> >> %DirectCell%
+echo	^      ^<a href="https://www.domschicago.com"^> >> %DirectCell%
+echo	^        ^<img >> %DirectCell%
+echo	^		   class="light-img" >> %DirectCell%
+echo	^          src="https://static.wixstatic.com/media/a0585a_6d3065fb88ff4c458b8038a84921aa2b~mv2.png" >> %DirectCell%
+echo	^          title="DOMSChicago.com" >> %DirectCell%
+echo	^          alt="DOMSChicago.com" >> %DirectCell%
+echo	^        /^> >> %DirectCell%
+echo	^		^<!--[if !mso]^>^<! --^>^<div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center"^> >> %DirectCell%
+echo	^		^<img  >> %DirectCell%
+echo	^		   src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %DirectCell%
+echo	^          title="DOMSChicago.com" >> %DirectCell%
+echo	^          alt="DOMSChicago.com" >> %DirectCell%
+echo	^        /^> >> %DirectCell%
+echo	^	    ^</div^>^<^!--^<^![endif]--^> >> %DirectCell%
+echo	^      ^</a^> >> %DirectCell%
+echo	^    ^</td^> >> %DirectCell%
+echo	^    ^<td style="border-left:2px #1D252D solid; padding:0px 10px 0px 16px; font-weight:normal; font-size:11px; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %DirectCell%
+echo	^      ^<span style="color:#1D252D; font-weight:bold; font-size:16px" >> %DirectCell%
+echo	^        ^>%DisplayName%^</span >> %DirectCell%
+echo	^      ^>^<br /^> >> %DirectCell%
+echo	^      ^<span  >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
+echo	^        style="color:#1D252D;" >> %DirectCell%
+echo	^        ^>%Title%^</span >> %DirectCell%
+echo	^      ^>^<br /^> >> %DirectCell%
+echo	^      ^<span  >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
+echo	^        style="color:#1D252D; font-weight:bold;" >> %DirectCell%
+echo	^        ^>Direct: ^</span >> %DirectCell%
+echo	^      ^>^<a  >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %DirectCell%
+echo	^        href="tel:%DirectNumber%" >> %DirectCell%
+echo	^        ^>%DirectNumber%^</a >> %DirectCell%
+echo	^      ^>^<br /^> >> %DirectCell%
+echo	^      ^<span  >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
+echo	^        style="color:#1D252D; font-weight:bold;" >> %DirectCell%
+echo	^        ^>Cell: ^</span >> %DirectCell%
+echo	^      ^>^<a  >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %DirectCell%
+echo	^        href="tel:%CellNumber%" >> %DirectCell%
+echo	^        ^>%CellNumber%^</a >> %DirectCell%
+echo	^      ^>^<br /^> >> %DirectCell%
+echo	^      ^<a >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
+echo	^        style="color:#1D252D; text-decoration:none;" >> %DirectCell%
+echo	^        href="mailto:%Email%" >> %DirectCell%
+echo	^        ^>%Email%^</a ^> >> %DirectCell%
+echo	^    ^</td^> >> %DirectCell%
+echo	^  ^</tr^> >> %DirectCell%
+echo	^</table^> >> %DirectCell%
+:End
+echo.
+echo.
+echo Your Outlook Signatures have been created.
+echo You can select a default signature in Outlook at File ^> Options ^> Mail ^> Signatures.
+echo.
+echo.
+pause
