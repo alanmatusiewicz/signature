@@ -59,65 +59,69 @@ echo	^  cellspacing="0" >> %Primary%
 echo	^  cellpadding="0" >> %Primary%
 echo	^  border="0" >> %Primary%
 echo	^  valign="middle" >> %Primary%
-echo	^  style="-webkit-text-size-adjust:100%%;-ms-text-size-adjust:100%%;"^> >> %Primary%
+echo	^  style="-ms-text-size-adjust:100%%; -webkit-text-size-adjust:100%%;"^> >> %Primary%
 echo	^  ^<tr^> >> %Primary%
 echo	^    ^<td >> %Primary%
 echo	^      style="padding:0px 2px 0px 0px"^> >> %Primary%
 echo	^      ^<a href="https://www.domschicago.com"^> >> %Primary%
 echo	^        ^<img >> %Primary%
+echo	^          alt="DOMSChicago.com" >> %Primary%
 echo	^		   class="light-img" >> %Primary%
-echo	^          src="https://static.wixstatic.com/media/a0585a_6d3065fb88ff4c458b8038a84921aa2b~mv2.png" >> %Primary%
+echo	^          src="https://static.wixstatic.com/media/a0585a_94e02ad6535c467eac5069ff3ad34b7a~mv2.png" >> %Primary%
 echo	^          title="DOMSChicago.com" >> %Primary%
-echo	^          alt="DOMSChicago.com" >> %Primary%
 echo	^        /^> >> %Primary%
-echo	^		^<!--[if !mso]^>^<! --^>^<div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center"^> >> %Primary%
+echo	^		^<!--[if !mso]^>^<! --^>^<div >> %Primary%
+echo	^		  align="center" >> %Primary%
+echo	^		  class="dark-img" >> %Primary%
+echo	^		  style="display:none; float:left; line-height:0px; max-height:0px; max-width:0px; overflow:hidden; visibility:hidden; width:0px;"^> >> %Primary%
 echo	^		^<img  >> %Primary%
-echo	^		   src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %Primary%
-echo	^          title="DOMSChicago.com" >> %Primary%
-echo	^          alt="DOMSChicago.com" >> %Primary%
+echo	^		  alt="DOMSChicago.com" >> %Primary%
+echo	^		  src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %Primary%
+echo	^         title="DOMSChicago.com" >> %Primary%
 echo	^        /^> >> %Primary%
 echo	^	    ^</div^>^<^!--^<^![endif]--^> >> %Primary%
 echo	^      ^</a^> >> %Primary%
 echo	^    ^</td^> >> %Primary%
-echo	^    ^<td style="border-left:2px #1D252D solid; padding:0px 10px 0px 16px; font-weight:normal; font-size:11px; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %Primary%
-echo	^      ^<span style="color:#1D252D; font-weight:bold; font-size:16px" >> %Primary%
+echo	^    ^<td style="border-left:2px #1D252D solid; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif; font-size:11px; font-weight:normal; padding:0px 10px 0px 16px;"^> >> %Primary%
+echo	^      ^<span >> %Primary%
+echo	^		 style="color:#1D252D; font-size:16px; font-weight:bold;" >> %Primary%
 echo	^        ^>%DisplayName%^</span >> %Primary%
 echo	^      ^>^<br /^> >> %Primary%
 echo	^      ^<span  >> %Primary%
-echo	^        valign="bottom" >> %Primary%
 echo	^        style="color:#1D252D;" >> %Primary%
+echo	^        valign="bottom" >> %Primary%
 echo	^        ^>%Title%^</span >> %Primary%
 echo	^      ^>^<br /^> >> %Primary%
 IF "%Extension%"=="" GOTO NoExtension
 :Extension
 echo	^      ^<span  >> %Primary%
-echo	^        valign="bottom" >> %Primary%
 echo	^        style="color:#1D252D; font-weight:bold;" >> %Primary%
+echo	^        valign="bottom" >> %Primary%
 echo	^        ^>Office: ^</span >> %Primary%
 echo	^      ^>^<a  >> %Primary%
-echo	^        valign="bottom" >> %Primary%
-echo	^        style="color:#1D252D; text-decoration:none;"  >> %Primary%
 echo	^        href="tel:312-549-8795,,%Extension%" >> %Primary%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %Primary%
+echo	^        valign="bottom" >> %Primary%
 echo	^        ^>312-549-8795 Ext.%Extension%^</a >> %Primary%
 echo	^      ^>^<br /^> >> %Primary%
 GOTO Email
 :NoExtension
 echo	^      ^<span  >> %Primary%
-echo	^        valign="bottom" >> %Primary%
 echo	^        style="color:#1D252D; font-weight:bold;" >> %Primary%
+echo	^        valign="bottom" >> %Primary%
 echo	^        ^>Main: ^</span >> %Primary%
 echo	^      ^>^<a  >> %Primary%
-echo	^        valign="bottom" >> %Primary%
-echo	^        style="color:#1D252D; text-decoration:none;"  >> %Primary%
 echo	^        href="tel:312-549-8795" >> %Primary%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %Primary%
+echo	^        valign="bottom" >> %Primary%
 echo	^        ^>312-549-8795^</a >> %Primary%
 echo	^      ^>^<br /^> >> %Primary%
 GOTO Email
 :Email
 echo	^      ^<a >> %Primary%
-echo	^        valign="bottom" >> %Primary%
-echo	^        style="color:#1D252D; text-decoration:none;" >> %Primary%
 echo	^        href="mailto:%Email%" >> %Primary%
+echo	^        style="color:#1D252D; text-decoration:none;" >> %Primary%
+echo	^        valign="bottom" >> %Primary%
 echo	^        ^>%Email%^</a ^> >> %Primary%
 echo	^    ^</td^> >> %Primary%
 echo	^  ^</tr^> >> %Primary%
@@ -159,75 +163,79 @@ echo	^  cellspacing="0" >> %PrimaryCell%
 echo	^  cellpadding="0" >> %PrimaryCell%
 echo	^  border="0" >> %PrimaryCell%
 echo	^  valign="middle" >> %PrimaryCell%
-echo	^  style="-webkit-text-size-adjust:100%%;-ms-text-size-adjust:100%%;"^> >> %PrimaryCell%
+echo	^  style="-ms-text-size-adjust:100%%; -webkit-text-size-adjust:100%%;"^> >> %PrimaryCell%
 echo	^  ^<tr^> >> %PrimaryCell%
 echo	^    ^<td >> %PrimaryCell%
 echo	^      style="padding:0px 2px 0px 0px"^> >> %PrimaryCell%
 echo	^      ^<a href="https://www.domschicago.com"^> >> %PrimaryCell%
 echo	^        ^<img >> %PrimaryCell%
+echo	^          alt="DOMSChicago.com" >> %PrimaryCell%
 echo	^		   class="light-img" >> %PrimaryCell%
-echo	^          src="https://static.wixstatic.com/media/a0585a_6d3065fb88ff4c458b8038a84921aa2b~mv2.png" >> %PrimaryCell%
+echo	^          src="https://static.wixstatic.com/media/a0585a_94e02ad6535c467eac5069ff3ad34b7a~mv2.png" >> %PrimaryCell%
 echo	^          title="DOMSChicago.com" >> %PrimaryCell%
-echo	^          alt="DOMSChicago.com" >> %PrimaryCell%
 echo	^        /^> >> %PrimaryCell%
-echo	^		^<!--[if !mso]^>^<! --^>^<div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center"^> >> %PrimaryCell%
+echo	^		^<!--[if !mso]^>^<! --^>^<div >> %PrimaryCell%
+echo	^		  align="center" >> %PrimaryCell%
+echo	^		  class="dark-img" >> %PrimaryCell%
+echo	^		  style="display:none; float:left; line-height:0px; max-height:0px; max-width:0px; overflow:hidden; visibility:hidden; width:0px;"^> >> %PrimaryCell%
 echo	^		^<img  >> %PrimaryCell%
-echo	^		   src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %PrimaryCell%
-echo	^          title="DOMSChicago.com" >> %PrimaryCell%
-echo	^          alt="DOMSChicago.com" >> %PrimaryCell%
+echo	^		  alt="DOMSChicago.com" >> %PrimaryCell%
+echo	^		  src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %PrimaryCell%
+echo	^         title="DOMSChicago.com" >> %PrimaryCell%
 echo	^        /^> >> %PrimaryCell%
 echo	^	    ^</div^>^<^!--^<^![endif]--^> >> %PrimaryCell%
 echo	^      ^</a^> >> %PrimaryCell%
 echo	^    ^</td^> >> %PrimaryCell%
-echo	^    ^<td style="border-left:2px #1D252D solid; padding:0px 10px 0px 16px; font-weight:normal; font-size:11px; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %PrimaryCell%
-echo	^      ^<span style="color:#1D252D; font-weight:bold; font-size:16px" >> %PrimaryCell%
+echo	^    ^<td style="border-left:2px #1D252D solid; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif; font-size:11px; font-weight:normal; padding:0px 10px 0px 16px;"^> >> %PrimaryCell%
+echo	^      ^<span >> %PrimaryCell%
+echo	^		 style="color:#1D252D; font-size:16px; font-weight:bold;" >> %PrimaryCell%
 echo	^        ^>%DisplayName%^</span >> %PrimaryCell%
 echo	^      ^>^<br /^> >> %PrimaryCell%
 echo	^      ^<span  >> %PrimaryCell%
-echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        style="color:#1D252D;" >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        ^>%Title%^</span >> %PrimaryCell%
 echo	^      ^>^<br /^> >> %PrimaryCell%
 IF "%Extension%"=="" GOTO NoExtensionCell
 :ExtensionCell
 echo	^      ^<span  >> %PrimaryCell%
-echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        style="color:#1D252D; font-weight:bold;" >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        ^>Office: ^</span >> %PrimaryCell%
 echo	^      ^>^<a  >> %PrimaryCell%
-echo	^        valign="bottom" >> %PrimaryCell%
-echo	^        style="color:#1D252D; text-decoration:none;"  >> %PrimaryCell%
 echo	^        href="tel:312-549-8795,,%Extension%" >> %PrimaryCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        ^>312-549-8795 Ext.%Extension%^</a >> %PrimaryCell%
 echo	^      ^>^<br /^> >> %PrimaryCell%
 GOTO Cell
 :NoExtensionCell
 echo	^      ^<span  >> %PrimaryCell%
-echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        style="color:#1D252D; font-weight:bold;" >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        ^>Main: ^</span >> %PrimaryCell%
 echo	^      ^>^<a  >> %PrimaryCell%
-echo	^        valign="bottom" >> %PrimaryCell%
-echo	^        style="color:#1D252D; text-decoration:none;"  >> %PrimaryCell%
 echo	^        href="tel:312-549-8795" >> %PrimaryCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        ^>312-549-8795^</a >> %PrimaryCell%
 echo	^      ^>^<br /^> >> %PrimaryCell%
 GOTO Cell
 :Cell
 echo	^      ^<span  >> %PrimaryCell%
-echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        style="color:#1D252D; font-weight:bold;" >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        ^>Cell: ^</span >> %PrimaryCell%
 echo	^      ^>^<a  >> %PrimaryCell%
-echo	^        valign="bottom" >> %PrimaryCell%
-echo	^        style="color:#1D252D; text-decoration:none;"  >> %PrimaryCell%
 echo	^        href="tel:%CellNumber%" >> %PrimaryCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        ^>%CellNumber%^</a >> %PrimaryCell%
 echo	^      ^>^<br /^> >> %PrimaryCell%
 echo	^      ^<a >> %PrimaryCell%
-echo	^        valign="bottom" >> %PrimaryCell%
-echo	^        style="color:#1D252D; text-decoration:none;" >> %PrimaryCell%
 echo	^        href="mailto:%Email%" >> %PrimaryCell%
+echo	^        style="color:#1D252D; text-decoration:none;" >> %PrimaryCell%
+echo	^        valign="bottom" >> %PrimaryCell%
 echo	^        ^>%Email%^</a ^> >> %PrimaryCell%
 echo	^    ^</td^> >> %PrimaryCell%
 echo	^  ^</tr^> >> %PrimaryCell%
@@ -270,49 +278,53 @@ echo	^  cellspacing="0" >> %Direct%
 echo	^  cellpadding="0" >> %Direct%
 echo	^  border="0" >> %Direct%
 echo	^  valign="middle" >> %Direct%
-echo	^  style="-webkit-text-size-adjust:100%%;-ms-text-size-adjust:100%%;"^> >> %Direct%
+echo	^  style="-ms-text-size-adjust:100%%; -webkit-text-size-adjust:100%%;"^> >> %Direct%
 echo	^  ^<tr^> >> %Direct%
 echo	^    ^<td >> %Direct%
 echo	^      style="padding:0px 2px 0px 0px"^> >> %Direct%
 echo	^      ^<a href="https://www.domschicago.com"^> >> %Direct%
 echo	^        ^<img >> %Direct%
+echo	^          alt="DOMSChicago.com" >> %Direct%
 echo	^		   class="light-img" >> %Direct%
-echo	^          src="https://static.wixstatic.com/media/a0585a_6d3065fb88ff4c458b8038a84921aa2b~mv2.png" >> %Direct%
+echo	^          src="https://static.wixstatic.com/media/a0585a_94e02ad6535c467eac5069ff3ad34b7a~mv2.png" >> %Direct%
 echo	^          title="DOMSChicago.com" >> %Direct%
-echo	^          alt="DOMSChicago.com" >> %Direct%
 echo	^        /^> >> %Direct%
-echo	^		^<!--[if !mso]^>^<! --^>^<div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center"^> >> %Direct%
+echo	^		^<!--[if !mso]^>^<! --^>^<div >> %Direct%
+echo	^		  align="center" >> %Direct%
+echo	^		  class="dark-img" >> %Direct%
+echo	^		  style="display:none; float:left; line-height:0px; max-height:0px; max-width:0px; overflow:hidden; visibility:hidden; width:0px;"^> >> %Direct%
 echo	^		^<img  >> %Direct%
-echo	^		   src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %Direct%
-echo	^          title="DOMSChicago.com" >> %Direct%
-echo	^          alt="DOMSChicago.com" >> %Direct%
+echo	^		  alt="DOMSChicago.com" >> %Direct%
+echo	^		  src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %Direct%
+echo	^         title="DOMSChicago.com" >> %Direct%
 echo	^        /^> >> %Direct%
 echo	^	    ^</div^>^<^!--^<^![endif]--^> >> %Direct%
 echo	^      ^</a^> >> %Direct%
 echo	^    ^</td^> >> %Direct%
-echo	^    ^<td style="border-left:2px #1D252D solid; padding:0px 10px 0px 16px; font-weight:normal; font-size:11px; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %Direct%
-echo	^      ^<span style="color:#1D252D; font-weight:bold; font-size:16px" >> %Direct%
+echo	^    ^<td style="border-left:2px #1D252D solid; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif; font-size:11px; font-weight:normal; padding:0px 10px 0px 16px;"^> >> %Direct%
+echo	^      ^<span >> %Direct%
+echo	^		 style="color:#1D252D; font-size:16px; font-weight:bold;" >> %Direct%
 echo	^        ^>%DisplayName%^</span >> %Direct%
 echo	^      ^>^<br /^> >> %Direct%
 echo	^      ^<span  >> %Direct%
-echo	^        valign="bottom" >> %Direct%
 echo	^        style="color:#1D252D;" >> %Direct%
+echo	^        valign="bottom" >> %Direct%
 echo	^        ^>%Title%^</span >> %Direct%
 echo	^      ^>^<br /^> >> %Direct%
 echo	^      ^<span  >> %Direct%
-echo	^        valign="bottom" >> %Direct%
 echo	^        style="color:#1D252D; font-weight:bold;" >> %Direct%
+echo	^        valign="bottom" >> %Direct%
 echo	^        ^>Direct: ^</span >> %Direct%
 echo	^      ^>^<a  >> %Direct%
-echo	^        valign="bottom" >> %Direct%
-echo	^        style="color:#1D252D; text-decoration:none;"  >> %Direct%
 echo	^        href="tel:%DirectNumber%" >> %Direct%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %Direct%
+echo	^        valign="bottom" >> %Direct%
 echo	^        ^>%DirectNumber%^</a >> %Direct%
 echo	^      ^>^<br /^> >> %Direct%
 echo	^      ^<a >> %Direct%
-echo	^        valign="bottom" >> %Direct%
-echo	^        style="color:#1D252D; text-decoration:none;" >> %Direct%
 echo	^        href="mailto:%Email%" >> %Direct%
+echo	^        style="color:#1D252D; text-decoration:none;" >> %Direct%
+echo	^        valign="bottom" >> %Direct%
 echo	^        ^>%Email%^</a ^> >> %Direct%
 echo	^    ^</td^> >> %Direct%
 echo	^  ^</tr^> >> %Direct%
@@ -354,28 +366,32 @@ echo	^  cellspacing="0" >> %DirectCell%
 echo	^  cellpadding="0" >> %DirectCell%
 echo	^  border="0" >> %DirectCell%
 echo	^  valign="middle" >> %DirectCell%
-echo	^  style="-webkit-text-size-adjust:100%%;-ms-text-size-adjust:100%%;"^> >> %DirectCell%
+echo	^  style="-ms-text-size-adjust:100%%; -webkit-text-size-adjust:100%%;"^> >> %DirectCell%
 echo	^  ^<tr^> >> %DirectCell%
 echo	^    ^<td >> %DirectCell%
 echo	^      style="padding:0px 2px 0px 0px"^> >> %DirectCell%
 echo	^      ^<a href="https://www.domschicago.com"^> >> %DirectCell%
 echo	^        ^<img >> %DirectCell%
+echo	^          alt="DOMSChicago.com" >> %DirectCell%
 echo	^		   class="light-img" >> %DirectCell%
-echo	^          src="https://static.wixstatic.com/media/a0585a_6d3065fb88ff4c458b8038a84921aa2b~mv2.png" >> %DirectCell%
+echo	^          src="https://static.wixstatic.com/media/a0585a_94e02ad6535c467eac5069ff3ad34b7a~mv2.png" >> %DirectCell%
 echo	^          title="DOMSChicago.com" >> %DirectCell%
-echo	^          alt="DOMSChicago.com" >> %DirectCell%
 echo	^        /^> >> %DirectCell%
-echo	^		^<!--[if !mso]^>^<! --^>^<div class="dark-img" style="display:none; overflow:hidden; float:left; width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidden;" align="center"^> >> %DirectCell%
+echo	^		^<!--[if !mso]^>^<! --^>^<div >> %DirectCell%
+echo	^		  align="center" >> %DirectCell%
+echo	^		  class="dark-img" >> %DirectCell%
+echo	^		  style="display:none; float:left; line-height:0px; max-height:0px; max-width:0px; overflow:hidden; visibility:hidden; width:0px;"^> >> %DirectCell%
 echo	^		^<img  >> %DirectCell%
-echo	^		   src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %DirectCell%
-echo	^          title="DOMSChicago.com" >> %DirectCell%
-echo	^          alt="DOMSChicago.com" >> %DirectCell%
+echo	^		  alt="DOMSChicago.com" >> %DirectCell%
+echo	^		  src="https://static.wixstatic.com/media/a0585a_57aa3c75009440529508937bb457e5d6~mv2.png" >> %DirectCell%
+echo	^         title="DOMSChicago.com" >> %DirectCell%
 echo	^        /^> >> %DirectCell%
 echo	^	    ^</div^>^<^!--^<^![endif]--^> >> %DirectCell%
 echo	^      ^</a^> >> %DirectCell%
 echo	^    ^</td^> >> %DirectCell%
-echo	^    ^<td style="border-left:2px #1D252D solid; padding:0px 10px 0px 16px; font-weight:normal; font-size:11px; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif;"^> >> %DirectCell%
-echo	^      ^<span style="color:#1D252D; font-weight:bold; font-size:16px" >> %DirectCell%
+echo	^    ^<td style="border-left:2px #1D252D solid; font-family:Helvetica,Arial,Trebuchet MS,Sans Serif; font-size:11px; font-weight:normal; padding:0px 10px 0px 16px;"^> >> %DirectCell%
+echo	^      ^<span >> %DirectCell%
+echo	^		 style="color:#1D252D; font-size:16px; font-weight:bold;" >> %DirectCell%
 echo	^        ^>%DisplayName%^</span >> %DirectCell%
 echo	^      ^>^<br /^> >> %DirectCell%
 echo	^      ^<span  >> %DirectCell%
@@ -384,29 +400,29 @@ echo	^        style="color:#1D252D;" >> %DirectCell%
 echo	^        ^>%Title%^</span >> %DirectCell%
 echo	^      ^>^<br /^> >> %DirectCell%
 echo	^      ^<span  >> %DirectCell%
-echo	^        valign="bottom" >> %DirectCell%
 echo	^        style="color:#1D252D; font-weight:bold;" >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
 echo	^        ^>Direct: ^</span >> %DirectCell%
 echo	^      ^>^<a  >> %DirectCell%
-echo	^        valign="bottom" >> %DirectCell%
-echo	^        style="color:#1D252D; text-decoration:none;"  >> %DirectCell%
 echo	^        href="tel:%DirectNumber%" >> %DirectCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
 echo	^        ^>%DirectNumber%^</a >> %DirectCell%
 echo	^      ^>^<br /^> >> %DirectCell%
 echo	^      ^<span  >> %DirectCell%
-echo	^        valign="bottom" >> %DirectCell%
 echo	^        style="color:#1D252D; font-weight:bold;" >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
 echo	^        ^>Cell: ^</span >> %DirectCell%
 echo	^      ^>^<a  >> %DirectCell%
-echo	^        valign="bottom" >> %DirectCell%
-echo	^        style="color:#1D252D; text-decoration:none;"  >> %DirectCell%
 echo	^        href="tel:%CellNumber%" >> %DirectCell%
+echo	^        style="color:#1D252D; text-decoration:none;"  >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
 echo	^        ^>%CellNumber%^</a >> %DirectCell%
 echo	^      ^>^<br /^> >> %DirectCell%
 echo	^      ^<a >> %DirectCell%
-echo	^        valign="bottom" >> %DirectCell%
-echo	^        style="color:#1D252D; text-decoration:none;" >> %DirectCell%
 echo	^        href="mailto:%Email%" >> %DirectCell%
+echo	^        style="color:#1D252D; text-decoration:none;" >> %DirectCell%
+echo	^        valign="bottom" >> %DirectCell%
 echo	^        ^>%Email%^</a ^> >> %DirectCell%
 echo	^    ^</td^> >> %DirectCell%
 echo	^  ^</tr^> >> %DirectCell%
